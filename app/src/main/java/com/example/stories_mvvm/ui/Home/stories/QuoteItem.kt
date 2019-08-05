@@ -13,5 +13,7 @@ class QuoteItem(
 
     override fun bind(viewBinding: ItemQuoteBinding, position: Int) {
         viewBinding.setQuote(quote)
+
+
     }
 }
