@@ -12,4 +12,6 @@ class StoriesViewModel(
     val quotes by lazyDeferred {
         repository.getQuotes()
     }
+
+
 }

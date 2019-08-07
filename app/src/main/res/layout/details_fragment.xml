@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+
+        tools:context=".ui.Home.Details.DetailsFragment">
+    <data>
+        <variable name="viewModel"
+                  type="com.example.stories_mvvm.ui.DetailsViewModel"/>
+    </data>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                           android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:layout_height="wrap_content">
+
+     <ImageView android:layout_width="match_parent"
+                android:id="@+id/imageview"
+                android:src="@drawable/cpu"
+                android:scaleType="centerCrop"
+
+                android:layout_marginBottom="10dp"
+                android:layout_height="250dp"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:textSize="25sp"
+                  android:id="@+id/mquote"
+                  android:gravity="fill_vertical"
+                  android:inputType="textMultiLine"
+                  android:textColor="@color/colorPrimary"
+                  android:hint="@string/jkhgkdfnvdkfnvkdfjnvkdfnkdfnvkdfjvndks_n_dkfuisudf"
+                  android:layout_marginBottom="15dp"
+                  android:layout_height="wrap_content"/>
+        <TextView android:layout_width="match_parent"
+                  android:textSize="25sp"
+                  android:hint="@string/author"
+                  android:id="@+id/author"
+                  android:gravity="right"
+                  android:layout_height="wrap_content" tools:ignore="RtlHardcoded"/>
+
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
+</layout>

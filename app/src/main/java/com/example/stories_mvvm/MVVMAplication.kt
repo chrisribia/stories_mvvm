@@ -9,6 +9,7 @@ import com.example.stories_mvvm.data.repository.QuotesRepository
 import com.example.stories_mvvm.data.repository.UserRepository
 import com.example.stories_mvvm.ui.AccountViewModel
 import com.example.stories_mvvm.ui.Auth.AuthViewModelFactory
+import com.example.stories_mvvm.ui.Home.Details.DetailsViewModelFactory
 import com.example.stories_mvvm.ui.Home.account.AccountViewModelFactory
 import com.example.stories_mvvm.ui.Home.stories.StoriesViewModelFactory
 import org.kodein.di.Kodein
@@ -29,12 +30,12 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from singleton { MyApi(instance()) }
         bind() from singleton { AppDataBase(instance()) }
         bind() from singleton { PreferenceProvider(instance()) }
-
         bind() from singleton { UserRepository(instance(), instance()) }
         bind() from singleton { QuotesRepository(instance(), instance(), instance()) }
         bind() from provider { AuthViewModelFactory(instance()) }
         bind() from provider { AccountViewModelFactory(instance()) }
         bind() from provider{ StoriesViewModelFactory(instance()) }
+        bind() from provider{ DetailsViewModelFactory(instance()) }
 
 
 

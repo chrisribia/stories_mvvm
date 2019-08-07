@@ -8,8 +8,16 @@
               android:label="home_fragment" tools:layout="@layout/home_fragment"/>
     <fragment android:id="@+id/storiesFragment"
               android:name="com.example.stories_mvvm.ui.Home.stories.StoriesFragment"
-              android:label="stories_fragment" tools:layout="@layout/stories_fragment"/>
+              android:label="stories_fragment" tools:layout="@layout/stories_fragment">
+        <action android:id="@+id/actionDetails" app:destination="@id/detailsFragment"/>
+    </fragment>
     <fragment android:id="@+id/accountFragment"
               android:name="com.example.stories_mvvm.ui.Home.account.AccountFragment"
               android:label="account_fragment" tools:layout="@layout/account_fragment"/>
+    <fragment android:id="@+id/detailsFragment" android:name="com.example.stories_mvvm.ui.Home.Details.DetailsFragment"
+              android:label="details_fragment" tools:layout="@layout/details_fragment">
+        <argument
+                app:argType="com.example.stories_mvvm.data.entity.db.Quote"
+                android:name="Quote"/>
+    </fragment>
 </navigation>

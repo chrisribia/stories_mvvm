@@ -14,7 +14,7 @@ import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
 
-private val MINIMUM_INTERVAL = 0.05
+private val MINIMUM_INTERVAL = 2
 
 class QuotesRepository(
     private val api: MyApi,
@@ -23,6 +23,8 @@ class QuotesRepository(
 ) : SafeApiRequest() {
 
     private val quotes = MutableLiveData<List<Quote>>()
+    val m = quotes.value
+
 
     init {
         quotes.observeForever {
@@ -57,5 +59,12 @@ class QuotesRepository(
             db.getQuoteDao().saveAllQuotes(quotes)
         }
     }
+
+     fun getSingleQuote(QuoteId : Int){
+         Coroutines.io{
+             db.getQuoteDao().getQuote(QuoteId)
+         }
+     }
+
 
 }

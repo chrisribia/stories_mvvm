@@ -2,6 +2,7 @@ package com.example.stories_mvvm.data.entity.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Quote(
@@ -12,4 +13,4 @@ data class Quote(
     val thumbnail: String,
     val created_at: String,
     val updated_at: String
-)
+) : Serializable

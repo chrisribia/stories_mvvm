@@ -24,19 +24,18 @@
 
             <TextView
                     android:layout_below="@+id/imageview"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:id="@+id/quote"
+                    android:inputType="textMultiLine"
                     android:textColor="@color/colorPrimaryDark"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{`'`+quote.quote+`'`}"
+                    android:layout_height="100dp"
+                    android:text="@{`'`+quote.author+`'`}"
                     tools:text="Success doesn’t just find you. You have to go out and get it."/>
 
             <TextView
                     android:textColor="@color/colorPrimary"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     tools:text="- Belal Khan"
-                    android:text="@{`-` + quote.author}"
+                    android:text="@{`-` + quote.quote}"
                     android:layout_alignParentEnd="true"
                     android:layout_below="@id/quote"
                     android:id="@+id/author"
