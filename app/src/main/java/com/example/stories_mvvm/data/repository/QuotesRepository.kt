@@ -23,7 +23,6 @@ class QuotesRepository(
 ) : SafeApiRequest() {
 
     private val quotes = MutableLiveData<List<Quote>>()
-    val m = quotes.value
 
 
     init {
@@ -60,11 +59,8 @@ class QuotesRepository(
         }
     }
 
-     fun getSingleQuote(QuoteId : Int){
-         Coroutines.io{
-             db.getQuoteDao().getQuote(QuoteId)
-         }
-     }
+    fun findEmployee(id: Int) = db.getQuoteDao().findEmployee(id)
+
 
 
 }

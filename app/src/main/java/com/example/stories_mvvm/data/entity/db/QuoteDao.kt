@@ -15,7 +15,8 @@ interface QuoteDao {
     @Query("SELECT * FROM Quote")
     fun getQuotes() : LiveData<List<Quote>>
 
-    @Query("SELECT * FROM Quote WHERE id = :quoteId")
-    fun getQuote(quoteId : Int) : LiveData<List<Quote>>
+    @Query("SELECT * FROM Quote WHERE id = :id")
+    fun findEmployee(id: Int): LiveData<Quote>
+
 
 }

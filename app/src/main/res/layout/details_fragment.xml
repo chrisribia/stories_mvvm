@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
 
         tools:context=".ui.Home.Details.DetailsFragment">
     <data>
-        <variable name="viewModel"
+        <variable name="viewmodel"
                   type="com.example.stories_mvvm.ui.DetailsViewModel"/>
     </data>
 <RelativeLayout
@@ -24,13 +24,14 @@
                 android:id="@+id/imageview"
                 android:src="@drawable/cpu"
                 android:scaleType="centerCrop"
-
+                app:imageFromUrl="@{viewmodel.currentEmployee.thumbnail}"
                 android:layout_marginBottom="10dp"
                 android:layout_height="250dp"/>
 
         <TextView android:layout_width="match_parent"
                   android:textSize="25sp"
                   android:id="@+id/mquote"
+                  android:text="@{viewmodel.currentEmployee.author}"
                   android:gravity="fill_vertical"
                   android:inputType="textMultiLine"
                   android:textColor="@color/colorPrimary"
@@ -41,6 +42,7 @@
                   android:textSize="25sp"
                   android:hint="@string/author"
                   android:id="@+id/author"
+                  android:text="@{viewmodel.currentEmployee.quote}"
                   android:gravity="right"
                   android:layout_height="wrap_content" tools:ignore="RtlHardcoded"/>
 
